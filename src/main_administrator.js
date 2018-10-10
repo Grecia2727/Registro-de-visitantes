@@ -145,7 +145,7 @@ const mostrarvisitantesDeFirebase = () => {
                         "<td>" + datos[key].name +  "</td>"  +
                         "<td>" + datos[key].date +  "</td>"  +
                         "<td>" + datos[key].hour +  "</td>"  +
-                        // "<td>" + datos[key].photo +  "</td>"  +
+                        "<td>" + datos[key].photo +  "</td>"  +
                         "<td> </td>"  +
                       "<tr>";
     }
