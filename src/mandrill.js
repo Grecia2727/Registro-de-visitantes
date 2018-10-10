@@ -1,15 +1,21 @@
-function sendMail(){
+function sendEmailMandrill(extaerDatavisitator){
     $.ajax({
       type: "POST",
       url: "https://mandrillapp.com/api/1.0/messages/send.json",
       data: {
         'key': 'ZGiSDAUGJIgaCMIqm9ysPA',
         'message': {
-          "html": "<p>Example HTML content otro</p>",
-          "text": "Example text content",
-          "subject": "otro subject",
+          "html": `<p> Hoy ${extaerDatavisitator.date} a las ${extaerDatavisitator.hour} se Registró la
+                   visita de ${extaerDatavisitator.name}.
+                   Esta persona te está esperando, en este preciso instante.
+                   comunicate con el cliente llamandolo a su número de celular ${extaerDatavisitator.celular}.
+                   Atte.
+                   Empresa Co-working
+                   </p>`,
+          "text": "Quedamos a la espera de tu confirmación, para recibir la visita",
+          "subject": `Visita de ${extaerDatavisitator.name}`,
           "from_email": "lucero.g@laboratoria.la",
-          "from_name": "Cliente Registrado",
+          "from_name": "Visita Registrada",
           "to": [
               {
                   "email": "gutierrezanicamalucero@gmail.com",

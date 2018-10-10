@@ -116,16 +116,6 @@ const printData = (url) =>{
 }
 
 
-window.onload = inicializar;
-  var formVisitante;
-  var refMostrarVisitante;
-  var tbodyTablaVisitante;
-  const ref = firebase.database().ref("visitator");
-  ref.on("child_added", snap => {
-    printData(snap.val().name, snap.val().celular, snap.val().aQuienVisita, snap.val().company, snap.val().photo, snap.val().date, snap.val().hour, publications);
-  })
-
-
   function inicializar(){
     // formVisitante = document.getElementById("")
     tbodyTablaVisitante = document.getElementById("tbody-tabla-visitante");
@@ -145,7 +135,7 @@ const mostrarvisitantesDeFirebase = () => {
                         "<td>" + datos[key].name +  "</td>"  +
                         "<td>" + datos[key].date +  "</td>"  +
                         "<td>" + datos[key].hour +  "</td>"  +
-                        "<td>" + datos[key].photo +  "</td>"  +
+                        "<td>" + "<img src = datos[key].photo>" +  "</td>"  +
                         "<td> </td>"  +
                       "<tr>";
     }
