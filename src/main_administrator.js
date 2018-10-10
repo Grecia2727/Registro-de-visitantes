@@ -127,7 +127,6 @@ window.onload = inicializar;
 
 
   function inicializar(){
-    // formVisitante = document.getElementById("")
     tbodyTablaVisitante = document.getElementById("tbody-tabla-visitante");
     refMostrarVisitante = firebase.database().ref().child("visitator");
     mostrarvisitantesDeFirebase();
@@ -145,7 +144,7 @@ const mostrarvisitantesDeFirebase = () => {
                         "<td>" + datos[key].name +  "</td>"  +
                         "<td>" + datos[key].date +  "</td>"  +
                         "<td>" + datos[key].hour +  "</td>"  +
-                        "<td>" + datos[key].photo +  "</td>"  +
+                        "<td>" + "<img src=photo>" +  "</td>"  +
                         "<td> </td>"  +
                       "<tr>";
     }

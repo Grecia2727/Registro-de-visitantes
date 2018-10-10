@@ -21,6 +21,3 @@ capture.addEventListener('click', function () {
 
 }, false);
 
-// var canvas = document.getElementById('canvas');
-// var dataURL = canvas.toDataURL();
-// console.log(dataURL);
