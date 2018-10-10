@@ -2,6 +2,7 @@ clourd firestore
 
 // Initialize Cloud Firestore through Firebase
 // var db = firebase.firestore();
+
 // *************************************
 
   // db.collection("visitator").add({
@@ -16,40 +17,4 @@ clourd firestore
   //     console.log("error agregando ID: ", error);
   //   });
 
-  // ==============================================
-  configurar correos con SENDGRID
-  // ==============================================
-
-  const data = {
-  "personalizations": [
-    {
-      "to": [
-        {
-          "email": "mariaanguevara@gmail.com"
-        }
-      ],
-      "subject": "Hola vale! =)"
-    }
-  ],
-  "from": {
-    "email": "luis@laboratoria.la"
-  },
-  "content": [
-    {
-      "type": "text/plain",
-      "value": "Ves que si funciona!"
-    }
-  ]
-}
-
-fetch('https://api.sendgrid.com/v3/mail/send', {
-	method: "POST",
-	headers: {
-		"Content-Type": "application/json; charset=utf-8",
-		"Authorization": "Bearer [TU-SENDGRID-API-KEY]"
-	},
-	body: JSON.stringify(data), // body data type must match "Content-Type" header
-})
-.then(response => response.json())
-
-// *********************************************
+  

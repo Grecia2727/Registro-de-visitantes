@@ -15,95 +15,72 @@
 
   <div id="register-choose" class="fondo">
     <form>
-      <!-- Boton modal -->
-      <button type="button" class="btn btn-warning" data-toggle="modal" data-toggle="modal" data-target="#exampleModalVisitante">Visitante</button>
-      <button type="button" class="btn btn-warning" data-toggle="modal" data-toggle="modal" data-target="#exampleModalAdministrador">Administrador</button>
+    
+      <button type="button">Visitante</button>
+      <button type="button">Administrador</button>
     </form>
   </div>
 
-  <!-- Primer modal de visitante     -->
-  <!-- ============================= -->
-  <div class="modal fade" id="exampleModalVisitante" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Datos del Visitante</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <form>
-            <div class="form-group">
-              <input type="text" class="form-control" id="name" placeholder="Ingrese tu nombre">
-              <input type="text" class="form-control" id="celular" placeholder="Ingrese un número telefonico">
-              <input type="text" class="form-control" id="a-quien-visita" placeholder="¿A quién visitas?">
-              <input type="text" class="form-control" id="company" placeholder="¿A qué empresa pertenece?">
-            </div>
-          </form>
 
-          <!-- Tomando foto del visitante -->
-          <div class="">
-            <h5>Sonrie para la cámara:</h5>
-            <div class="container">
-              <div class="app">
+  <div class="form-visitante none" id="form-visitante">
+    <form>
+      <h5 class="modal-title" id="exampleModalLongTitle">Datos del Visitante</h5>
+      <div class="form-group">
+        <input type="text" id="name" placeholder="Ingrese tu nombre">
+        <input type="text" id="celular" placeholder="Ingrese un número telefonico">
+        <input type="text" id="a-quien-visita" placeholder="¿A quién visitas?">
+        <input type="text" id="company" placeholder="¿A qué empresa pertenece?">
+      </div>
+    </form>
 
-                <a href="#" id="start-camera" class="visible">Tomar Foto</a>
-                <video id="camera-stream" class="camera-stream"> </video>
-                <img id="snap" class="camera-stream">
-                <p id="error-message"></p>
-                <div class="controls">
-                  <a href="#" id="delete-photo" title="Delete Photo" class="disabled">
-                    <i class="material-icons">Eliminar foto</i>
-                  </a>
-                  <a href="#" id="take-photo" title="Take Photo">
-                    <i class="material-icons">Visualizar captura</i>
-                  </a>
-                  <a href="#" id="download-photo" download="selfie.png" title="Save Photo" class="disabled">
-                    <i class="material-icons">Descargar</i>
-                  </a>
-                </div>
-                <canvas class="camera-stream"> </canvas>
-              </div>
-            </div>
+    <!-- Tomando foto del visitante -->
+    <div class="">
+      <h5>Sonrie para la cámara:</h5>
+      <div class="container">
+        <div class="app">
+
+          <a href="#" id="start-camera" class="visible">Tomar Foto</a>
+          <video id="camera-stream" class="camera-stream"> </video>
+          <img id="snap" class="camera-stream">
+          <p id="error-message"></p>
+          <div class="controls">
+            <a href="#" id="delete-photo" title="Delete Photo" class="disabled">
+              <i class="material-icons">Eliminar foto</i>
+            </a>
+            <a href="#" id="take-photo" title="Take Photo">
+              <i class="material-icons">Visualizar captura</i>
+            </a>
+            <a href="#" id="download-photo" download="selfie.png" title="Save Photo" class="disabled">
+              <i class="material-icons">Descargar</i>
+            </a>
           </div>
-
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-          <button type="button" class="btn btn-warning" id="register-Visitator-Button">Registrar visitante</button>
+          <canvas class="camera-stream"> </canvas>
         </div>
       </div>
     </div>
+    <h5 class="modal-title">Datos del Visitante</h5>
   </div>
 
 
-  <!-- Segundo modal de Administrador -->
-  <!-- ============================== -->
-  <div class="modal fade" id="exampleModalAdministrador" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Datos del Visitante</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <input type="text" class="form-control" id="name-admin" placeholder="Nombre">
-          <input type="text" class="form-control" id="celular-admin" placeholder="Número de Telefono">
-          <input type="email" class="form-control" id="email-admin" placeholder="Correo Electrónico">
-          <input type="text" class="form-control" id="password-admin" placeholder="Contraseña">
-        </div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-          <button class="btn btn-warning" id="register-Administrator-Button">Registrar Administrador</button>
-        </div>
+
+  <div class="form-administrador none" id="form-administrador">
+    <div>
+      <h5 class="modal-title" id="exampleModalLongTitle">Datos del Visitante</h5>
+      <div class="input-group">
+        <input type="text" class="form-control" id="name-admin" placeholder="Nombre">
       </div>
+      <div class="input-group">
+        <input type="text" class="form-control" id="celular-admin" placeholder="Número de Telefono">
+      </div>
+      <div class="input-group">
+        <input type="email" class="form-control" id="email-admin" placeholder="Correo Electrónico">
+      </div>
+      <div class="input-group">
+        <input type="text" class="form-control" id="password-admin" placeholder="Contraseña">
+      </div>
+      <button class="btn btn-warning" id="register-Administrator-Button">Registrar Administrador</button>
     </div>
   </div>
-
 
 
 
@@ -121,4 +98,5 @@
 
 
 </body>
+
 </html>

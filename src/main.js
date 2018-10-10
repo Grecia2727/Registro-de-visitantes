@@ -4,6 +4,9 @@ const registerAdministratorButton = document.getElementById('register-Administra
 const registerVisited = document.getElementById('register-visited');
 const registerAdmin = document.getElementById('register-admin');
 const registerVisitor = document.getElementById('register-visitor');
+
+const formVisitante = document.getElementById('form-visitante');
+const formAdministrator = document.getElementById('form-administrador');
  
 
 // Botones al ingresar
@@ -14,15 +17,15 @@ const registerChoose = document.getElementById('register-choose');
 
 // Boton como Visitante
 visitorButton.addEventListener('click', () => {
-  registerVisitor.classList.replace('none','block');
-  registerAdmin.classList.add('none');
+  formVisitante.classList.replace('none','block');
+  formAdministrator.classList.add('none');
 })
 
 // Boton como Administrador
 adminButton.addEventListener('click', () => {
-  registerAdmin.classList.remove('none');
-  registerAdmin.classList.add('block');
-  registerVisitor.classList.replace('block', 'none');
+  formAdministrator.classList.remove('none');
+  formAdministrator.classList.add('block');
+  formVisitante.classList.replace('block', 'none');
 })
 
 
@@ -64,6 +67,40 @@ registerAdministratorButton.addEventListener('click', () => {
   })
   alert("Estimado colaborador su Registro fue exitoso")
 })
+ 
+
+function sendMail(){
+  $.ajax({
+    type: "POST",
+    url: "https://mandrillapp.com/api/1.0/messages/send.json",
+    data: {
+      'key': 'ZGiSDAUGJIgaCMIqm9ysPA',
+      'message': {
+        "html": "<p>Example HTML content otro</p>",
+        "text": "Buenos días, deseo reunirme contigo en este instante. Saludos",
+        "subject": "reservar visita",
+        "from_email": "cliente.g@laboratoria.la",
+        "from_name": "Cliente de ejemplo",
+        "to": [
+            {
+                "email": "gutierrezanicamalucero@gmail.com",
+                "name": "Grecia Gutierrez",
+                "type": "to"
+            }
+        ],
+        "headers": {
+            "Reply-To": "gutierrezanicamalucero@gmail.com"
+        }
+        
+    },
+    "async": false,
+    "ip_pool": "Main Pool",
+    "send_at": "2018-10-06 10:00:00"
+    }
+  });
+}
+
+
 
 
 // Modal de Boton Visitante
