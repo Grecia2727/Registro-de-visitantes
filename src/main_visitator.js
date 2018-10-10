@@ -27,18 +27,16 @@ registerVisitatorButton.addEventListener('click', () => {
     date: date,
     hour: hour,
   })
+  
   alert("Estimado visitante su Registro fue exitoso")
 
   let ref = firebase.database().ref('/visitator');
   ref.once('value', (data) => {
     data.forEach(visitator => {
       let visitor = visitator.key,
-        extraerDatavisitator = visitator.val();
-      sendEmailMandrill(extraerDatavisitator);
+        extraerDataVisitator = visitator.val();
+      sendEmailMandrill(extraerDataVisitator);
     })
   })
 })
-
-
-
 
