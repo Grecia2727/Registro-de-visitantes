@@ -115,7 +115,7 @@ const printData = (url) =>{
   img.setAttribute('class', 'img-fluid');
 }
 
-
+window.onload = inicializar;
   function inicializar(){
     tbodyTablaVisitante = document.getElementById("tbody-tabla-visitante");
     refMostrarVisitante = firebase.database().ref().child("visitator");
