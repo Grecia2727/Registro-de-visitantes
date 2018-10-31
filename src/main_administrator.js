@@ -115,6 +115,9 @@ const printData = (url) =>{
   img.setAttribute('class', 'img-fluid');
 }
 
+
+
+
 window.onload = inicializar;
   function inicializar(){
     tbodyTablaVisitante = document.getElementById("tbody-tabla-visitante");
@@ -134,7 +137,7 @@ const mostrarvisitantesDeFirebase = () => {
                         "<td>" + datos[key].name +  "</td>"  +
                         "<td>" + datos[key].date +  "</td>"  +
                         "<td>" + datos[key].hour +  "</td>"  +
-                        "<td>" + "<img src=photo>" +  "</td>"  +
+                        "<td>" + datos[key].photo +  "</td>"  +
                         "<td> </td>"  +
                       "<tr>";
     }
